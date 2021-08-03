@@ -19,7 +19,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    @Cacheable(cacheNames = "testCache1")
+    @Cacheable(cacheNames = "testCache1") // self-invocation 발생...
     public Set<Product> findMulti(Set<Long> ids) {
 
         Set<Product> resultSet = new LinkedHashSet<>();
